@@ -1,0 +1,7 @@
+<h1>Name: <%= @blogger.name %></h1>
+<h3>Age: <%= @blogger.age %></h3>
+<h3>Bio: <%= @blogger.bio %></h3>
+<h3><%= @blogger.total_likes %></h3>
+<h3><%= link_to(@blogger.featured_post.title, @blogger.featured_post) %></h3>
+
+<%= link_to "Back to all bloggers", bloggers_path%>

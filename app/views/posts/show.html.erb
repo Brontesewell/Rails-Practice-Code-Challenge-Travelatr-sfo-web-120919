@@ -1,0 +1,14 @@
+<h1>Title: <%= @post.title %></h1>
+<h3>Content: <% JSON.parse(@post.content).each do |p| %></h3>
+    <%= p %>
+    <% end %>
+
+    </br>
+
+<h3><%= link_to "Author of the post", @post.blogger %></h3>
+<h3><%= link_to "Destination of the post", @post.destination %></h3>
+<%= link_to "Back to all posts", posts_path%>
+
+
+<%= button_to "delete", @post, :method => :delete %>
+

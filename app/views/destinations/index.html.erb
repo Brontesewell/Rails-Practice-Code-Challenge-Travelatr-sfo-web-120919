@@ -1,0 +1,11 @@
+<h1>Destinations</h1>
+
+
+
+<ul>
+  <% @destinations.each do |a| %>
+    <li>
+      <%= link_to a.name, a %>
+    </li>
+  <% end %>
+</ul>

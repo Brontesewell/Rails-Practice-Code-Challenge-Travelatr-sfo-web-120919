@@ -1,0 +1,33 @@
+<h1>Posts Edit</h1>
+
+<%= form_for(@post) do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+    <br/><br/>
+
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <br/><br/>
+
+    <%= f.label :likes %>
+    <%= f.number_field :likes %>
+    <br/><br/>
+
+    <%= f.label :blogger_id %>
+    <%= f.collection_select :blogger_id, Blogger.all, :id, :name %>
+    <br/><br/>
+    <%= f.label :destination_id %>
+    <%= f.collection_select :destination_id, Destination.all, :id, :name %>
+    <br/><br/>
+    <%= f.submit "Edit the Post!" %>
+  <% end %>
+  
+  <% if @post.errors.any? %>
+    <ul>
+      <% @post.errors.full_messages.each do |e| %>
+        <li style="color:red;"><%= e %></li>
+      <% end %>
+    </ul>
+  <% end %>
+

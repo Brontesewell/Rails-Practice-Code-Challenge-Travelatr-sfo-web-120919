@@ -1,0 +1,22 @@
+<h1>Name: <%= @destination.name %></h1>
+<h3>Country: <%= @destination.country %></h3>
+
+<% if @destination.featured_post %>
+    <h3><%= link_to(@destination.featured_post.title, @destination.featured_post) %></h3>
+
+    <ul>
+    <% @destination.most_recent_5.each do |f| %>
+        <li>
+        <%= f.title %> 
+     </li>
+     <% end %>
+     </ul>
+     
+    
+ <% end %>
+
+ <% if @destination.bloggers.count > 0 %>
+ <h3>Average Age of Bloggers who wrote about this Destination: <%= @destination.average_age %></h3>
+ <% end %>
+
+ <%= link_to "Back to all destinations", destinations_path %>
